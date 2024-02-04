@@ -2,9 +2,7 @@ const Router = require('express')
 const router = new Router()
 const newsController = require('../controllers/ProjectController')
 
-router.post('/', newsController.create)
-router.get('/getOneNews', newsController.getOneNews)
-router.get('/getAllNews', newsController.getAllNews)
-router.delete('/user', newsController.deleteNews)
+router.post('/create', newsController.create)
+
 
 module.exports = router
