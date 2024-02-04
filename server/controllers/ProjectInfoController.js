@@ -1,4 +1,4 @@
-const {Project_info} = require('../models/models')
+/*const {Project_info} = require('../models/models')
 const db = require('../db')
 const ApiError = require("../error/ApiError");
 
@@ -22,4 +22,4 @@ class ProjectInfoContoller {
             next(ApiError.badRequest(e.message))
         }
     }
-}
+}*/
