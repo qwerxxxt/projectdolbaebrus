@@ -14,6 +14,17 @@ class ProjectInfoContoller {
             next(ApiError.badRequest(e.message))
         }
     }
+    async update(req,res,next){
+        try{
+            const {date_project, about_project, project_id} = req.body
+            const {id} = req.params
+            const update_project = await Project_info.update({date_project:date_project, about_project:about_project, project_id:about_project }, {where: {id}})
+            return res.json(update_project)
+        }
+        catch (e){
+            next(ApiError.badRequest(e.message))
+        }
+    }
 }
 
 module.exports = new ProjectInfoContoller()
