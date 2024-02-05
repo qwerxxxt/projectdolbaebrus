@@ -28,7 +28,8 @@ const Team = sequelize.define('team', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     img: {type: DataTypes.STRING, allowNull: false},
     team_name: {type: DataTypes.STRING},
-    about_name: {type: DataTypes.STRING}
+    about_team: {type: DataTypes.STRING},
+    user_id: {type: DataTypes.INTEGER}
 })
 
 User.hasMany(Project)
