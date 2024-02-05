@@ -33,12 +33,14 @@ const Team = sequelize.define('team', {
 const Comment = sequelize.define('comment', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     text_comment: {type: DataTypes.STRING},
-    user_id: {type: DataTypes.INTEGER}
+    user_id: {type: DataTypes.INTEGER},
+    project_id: {type: DataTypes.INTEGER}
 })
 
 const Like = sequelize.define('like', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    user_id: {type: DataTypes.INTEGER}
+    user_id: {type: DataTypes.INTEGER},
+    project_id: {type: DataTypes.INTEGER}
 })
 
 User.hasMany(Project)
