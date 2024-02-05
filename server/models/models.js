@@ -32,6 +32,17 @@ const Team = sequelize.define('team', {
     user_id: {type: DataTypes.INTEGER}
 })
 
+const Comment = sequelize.define('comment', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
+    text_comment: {type: DataTypes.STRING},
+    user_id: {type: DataTypes.INTEGER}
+})
+
+const Like = sequelize.define('like', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    user_id: {type: DataTypes.INTEGER}
+})
+
 User.hasMany(Project)
 Project.belongsTo(User)
 
@@ -44,14 +55,24 @@ User.belongsTo(Project)
 Project.hasOne(Project_info)
 Project_info.belongsTo(Project)
 
+Project.hasMany(Comment)
+Comment.belongsTo(Project)
+
+Project.hasMany(Like)
+Like.belongsTo(Project)
+
 Team.hasOne(User)
 User.belongsTo(Team)
+
+
 
 
 module.exports = {
     User,
     Project_info,
     Project,
-    Team
+    Team,
+    Comment,
+    Like
 }
 
