@@ -15,3 +15,5 @@ class ProjectInfoContoller {
         }
     }
 }
+
+module.exports = new ProjectInfoContoller()
