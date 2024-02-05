@@ -13,14 +13,12 @@ const Project = sequelize.define('project', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     img: {type: DataTypes.STRING, allowNull: false},
     project_name: {type: DataTypes.STRING},
-    comment: {type: DataTypes.STRING},
-    rating: {type: DataTypes.INTEGER},
     user_id: {type: DataTypes.INTEGER}
 })
 
 const Project_info = sequelize.define('ProjectInfo', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
-    date_project: {type: DataTypes.INTEGER},
+    date_project: {type: DataTypes.STRING},
     about_project: {type: DataTypes.STRING}
 })
 

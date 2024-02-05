@@ -2,11 +2,14 @@ const Router = require('express')
 const router = new Router()
 const ProjectRouter= require('./ProjectRouter')
 const userRouter= require('./userRouter')
-const Team = require("./TeamRouter");
+const TeamRouter = require("./TeamRouter")
+const ProjectInfoRouter = require('./ProjectinfoRouter')
+
 
 router.use('/project', ProjectRouter)
-router.use('/Team', Team)
+router.use('/Team', TeamRouter)
 router.use('/user', userRouter)
+router.use('/project_info', ProjectInfoRouter)
 
 
 

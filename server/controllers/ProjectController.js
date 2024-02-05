@@ -1,4 +1,4 @@
-const {Project_info, Project} = require("../models/models");
+const {Project_info, Project, Comment, Like} = require("../models/models");
 const ApiError = require('../error/ApiError')
 const {resolve} = require("path");
 const uuid = require('uuid')
@@ -8,7 +8,7 @@ class ProjectController {
 
     async create(req, res, next) {
         try {
-            const {user_id,project_name} = req.body
+            const {user_id,project_name,} = req.body
             const {img} = req.files
             let imageName = uuid.v4() + 'jpg'
             img.mv(resolve(__dirname, '..', 'static', imageName))
@@ -17,6 +17,12 @@ class ProjectController {
                 Project_info.create({
                     project_id: newProject.id,
                 });
+                Comment.create({
+                   project_id: newProject.id,
+                });
+                Like.create({
+                    project_id: newProject.id,
+                })
                 return res.json("Проект успешно создан!")
             });
 
