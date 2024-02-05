@@ -43,6 +43,7 @@ const Like = sequelize.define('like', {
     project_id: {type: DataTypes.INTEGER}
 })
 
+
 User.hasMany(Project)
 Project.belongsTo(User)
 
