@@ -18,13 +18,13 @@ const Project = sequelize.define('project', {
     user_id: {type: DataTypes.INTEGER}
 })
 
-const Project_info = sequelize.define('define', {
+const Project_info = sequelize.define('ProjectInfo', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     date_project: {type: DataTypes.INTEGER},
     about_project: {type: DataTypes.STRING}
 })
 
-const Person = sequelize.define('team', {
+const Team = sequelize.define('team', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement:true},
     img: {type: DataTypes.STRING, allowNull: false},
     team_name: {type: DataTypes.STRING},
@@ -34,8 +34,8 @@ const Person = sequelize.define('team', {
 User.hasMany(Project)
 Project.belongsTo(User)
 
-User.hasOne(Person)
-Person.belongsTo(User)
+User.hasOne(Team)
+Team.belongsTo(User)
 
 Project.hasMany(User)
 User.belongsTo(Project)
@@ -43,14 +43,14 @@ User.belongsTo(Project)
 Project.hasOne(Project_info)
 Project_info.belongsTo(Project)
 
-Person.hasOne(User)
-User.belongsTo(Person)
+Team.hasOne(User)
+User.belongsTo(Team)
 
 
 module.exports = {
     User,
     Project_info,
     Project,
-    Person
+    Team
 }
 
