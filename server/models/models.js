@@ -14,7 +14,8 @@ const Project = sequelize.define('project', {
     img: {type: DataTypes.STRING, allowNull: false},
     project_name: {type: DataTypes.STRING},
     comment: {type: DataTypes.STRING},
-    rating: {type: DataTypes.INTEGER}
+    rating: {type: DataTypes.INTEGER},
+    user_id: {type: DataTypes.INTEGER}
 })
 
 const Project_info = sequelize.define('define', {
