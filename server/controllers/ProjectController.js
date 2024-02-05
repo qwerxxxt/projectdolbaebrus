@@ -6,7 +6,7 @@ const uuid = require('uuid')
 class ProjectController {
 
 
-    async create(res, req, next) {
+    async create(req, res   , next) {
         try {
             const {project_name} = req.body
             const {img} = req.files
